@@ -28,7 +28,6 @@ public class App {
                 }
                 if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
                     label_son.setBounds(label_son.getX()+CELL,label_son.getY(),CELL,CELL);
-
                 }
                 if (label_son.getX()==label_mother.getX()&&label_son.getY()==label_mother.getY()){
                     JOptionPane.showMessageDialog(null,"妈妈找到了！");
