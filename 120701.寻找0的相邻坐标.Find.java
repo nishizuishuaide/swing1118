@@ -1,11 +1,13 @@
+package java120701;
+
 public class Find {
     public void findZero(int arr[][]){
         for (int row = 0; row <arr.length ; row++) {
             for (int column = 0; column <arr[row].length ; column++) {
                 if(arr[row][column] == 0){
-                    int r = row;
-                    int c = column;
-                    System.out.println("R_zero（"+r+","+c+")");
+                    int zeroX = column;
+                    int zeroY = row;
+                    System.out.println("R_zero（"+zeroX+","+zeroY+")");
                 }
             }
         }
@@ -14,9 +16,9 @@ public class Find {
         for (int row = 0; row <arr.length ; row++) {
             for (int column = 0; column <arr[row].length ; column++) {
                 if(arr[row][column] == 0){
-                    int r = column-1<0 ? 0 : row;
-                    int c = column-1<0 ? 0 : column-1;
-                    System.out.println("R_left（"+r+","+c+")");
+                	int leftX = column-1<0 ? 0 : column-1;
+                    int leftY = column-1<0 ? 0 : row;
+                    System.out.println("R_left（"+leftX+","+leftY+")");
                 }
             }
         }
@@ -25,9 +27,9 @@ public class Find {
         for (int row = 0; row <arr.length ; row++) {
             for (int column = 0; column <arr[row].length ; column++) {
                 if(arr[row][column] == 0){
-                    int r = column+1>=arr[row].length ? 0 : row;
-                    int c = column+1>=arr[row].length ? 0 : column+1;
-                    System.out.println("R_right（"+r+","+c+")");
+                    int rightX = column+1>=arr[row].length ? 0 : column+1;
+                    int rightY = column+1>=arr[row].length ? 0 : row;
+                    System.out.println("R_right（"+rightX+","+rightY+")");
                 }
             }
         }
@@ -36,16 +38,15 @@ public class Find {
         for (int row = 0; row <arr.length ; row++) {
             for (int column = 0; column <arr[row].length ; column++) {
                 if(arr[row][column] == 0){
-                    int r = row-1<0 ? 0 : row-1;
-                    int c = row-1<0 ? 0 : column;
+                    int upX = row-1<0 ? 0 : column;
+                    int upY = row-1<0 ? 0 : row-1;
                     try{
-                       
-                        int item = arr[r][c];
+                        int item = arr[upY][upX];
                     }catch (Exception e){
-                        r = 0;
-                        c = 0;
+                    	upY = 0;
+                        upX = 0;
                     }
-                    System.out.println("R_up（"+r+","+c+")");
+                    System.out.println("R_up（"+upX+","+upY+")");
                 }
             }
         }
@@ -54,19 +55,17 @@ public class Find {
         for (int row = 0; row <arr.length ; row++) {
             for (int column = 0; column <arr[row].length ; column++) {
                 if(arr[row][column] == 0){
-                    int r = row+1>=arr.length ? 0 : row+1;
-                    int c = row+1>=arr.length ? 0 : column;
+                    int downX = row+1>=arr.length ? 0 : column;
+                    int downY = row+1>=arr.length ? 0 : row+1;
                     try{
-                       
-                        int item = arr[r][c];
+                        int item = arr[downY][downX];
                     }catch (Exception e){
-                        r = 0;
-                        c = 0;
+                    	downY = 0;
+                        downX = 0;
                     }
-                    System.out.println("R_Down（"+r+","+c+")");
+                    System.out.println("R_Down（"+downX+","+downY+")");
                 }
             }
         }
     }
-
 }
