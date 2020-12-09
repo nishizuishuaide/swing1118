@@ -8,7 +8,7 @@ public class App {
     List<JLabel> label_list=new ArrayList<>();
     int array2d[][]={
             {1,2,3},
-            {4,5,6},
+            {4,5,6}
     };
     int cnt=0;
     int cell=128;
