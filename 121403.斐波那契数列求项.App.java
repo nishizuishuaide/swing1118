@@ -8,7 +8,7 @@ public class App {
             System.out.println(1);
             scanner.close();
         }
-        else     if(n>2&&n<=40){
+        else if(n>2&&n<=40){
             for (int i = 3;i<=n; i++){
                 f = f1 + f2;
                 f1 =f2;
